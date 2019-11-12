@@ -70,12 +70,12 @@ The requested URL returned error: 403 Forbidden while accessing
 
 答案：私有项目，没有权限，输入用户名密码，或者远程地址采用这种类型：
 
-vi .git/config
+    vi .git/config
 
 # 将
-[remote "origin"]  
-    url = https://github.com/用户名/仓库名.git
+    [remote "origin"]  
+        url = https://github.com/用户名/仓库名.git
 修改为：
-[remote "origin"]
-    url = https://用户名:密码@github.com/用户名/仓库名.git
+    [remote "origin"]
+        url = https://用户名:密码@github.com/用户名/仓库名.git
 
