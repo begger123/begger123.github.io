@@ -1,2 +1,81 @@
+# 个人博客
+# author：begger123
 # begger123.github.io
-个人博客
+
+一：桌面工程：
+
+    git bash here   //鼠标右键，进入终端  
+
+    0. 用户配置：  
+        git config --global user.name '用户名'
+        git config --global user.email '邮箱'
+
+    1. 创建文件夹 
+        cd /e
+        cd ./Git   //存放代码目录
+        新建工程： mkdir 文件名
+        cd 文件名
+        git init   //初始化   (出现.git文本)
+
+    2. 向仓库添加文件    
+        touch 文本.inxdex.html / 文本.inxdex.css / 文本.inxdex.js  //创建
+        git add '代码'          //添加代码到暂存区
+        git commit -m 'description'    //添加代码到仓库
+        git status              //状态
+
+    3. 修改仓库文件
+        vim '代码'              //终端修改
+        cat '代码'              //进入查看
+        git status              //状态
+        git add '代码'          //添加代码到暂存区
+        git commit -m 'description'    //添加代码到仓库
+        git status              //状态
+
+    4. 删除仓库文件
+        rm -rf '代码'       //删除编辑栏文本
+        git rm '代码'       //删除git文本
+        git commit -m 'description'    //添加代码到仓库
+        git status             //查看状态
+
+
+二：github工程：
+
+    git bash here   //鼠标右键，进入终端  
+
+    0. 用户配置：  
+        git config --global user.name '用户名'
+        git config --global user.email '邮箱'
+        GitHub 上面新建工程：new repository
+    1. 创建文本
+        文本.inxdex.html / 文本.inxdex.css / 文本.inxdex.js  
+
+
+
+git clone 代码配置：
+
+    cd /e
+    cd ./Git   //存放代码目录
+    git clone http://github.com/address   //下载代码（eg: index.html）
+    cd 代码
+    git add '代码'          //添加代码到暂存区
+    git commit -m 'description'    //添加代码到仓库，全部提交
+    git push                //将本地仓库同步到git远程仓库中（修改过内容）
+    git pull                //将git远程仓库同步到本地仓库中（修改过内容）
+    git checkout '代码'      //代码误删，恢复代码，或者是在GitHub上面检出分支（适用于别的软件或者系统）
+
+
+
+为什么无法同步或没有权限
+The requested URL returned error: 403 Forbidden while accessing
+
+答案：私有项目，没有权限，输入用户名密码，或者远程地址采用这种类型：
+
+vi .git/config
+
+# 将
+[remote "origin"]  
+    url = https://github.com/用户名/仓库名.git
+修改为：
+[remote "origin"]
+    url = https://用户名:密码@github.com/用户名/仓库名.git
+
